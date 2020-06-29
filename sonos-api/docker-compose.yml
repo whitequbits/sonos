@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  sonos-api:
+    build : .
+    volumes : 
+     - ../scripts:/scripts
+    ports:
+     - 8080:5000
