@@ -1,6 +1,7 @@
 pandas
 numpy
-flask
+uvicorn
+fastapi
 scikit-learn
 keras
 tensorflow

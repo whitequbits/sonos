@@ -1,4 +1,5 @@
 import requests
+import json
 
 class Stock:
   def __init__(self, symbol):

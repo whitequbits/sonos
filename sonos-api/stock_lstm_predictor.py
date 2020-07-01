@@ -4,6 +4,7 @@ from stock_lstm_model import StockLstmModel
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import pandas as pd
+import json
 
 class StockLSTMPredictor:
   def __init__(self, symbol, future_day=5):
@@ -38,7 +39,7 @@ class StockLSTMPredictor:
     result = scale.inverse_transform(result)
     result = pd.DataFrame(data=result[~self.future_day:], columns=[f"{self.future_day}-day result"])
 
-    return result.to_json()
+    return result.to_dict()
     
 
   
