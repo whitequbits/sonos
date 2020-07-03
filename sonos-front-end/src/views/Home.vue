@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container mx-auto d-flex justify-content-around flex-wrap">
-      <Card v-for="(stock, index) in data" :key="index" v-bind:text="stock.symbol"/>
+      <Card v-for="(stock, index) in data" :key="index" v-bind:symbol="stock.symbol"/>
     </div>
   </div>
 </template>

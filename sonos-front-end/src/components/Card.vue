@@ -1,9 +1,11 @@
 <template>
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="">
-    <div class="card-body">
-      <p class="card-text">{{text}}</p>
-    </div>
+    <router-link :to="{name: 'StockDetail', params: { symbol: symbol }}">
+      <img class="card-img-top" src="">
+      <div class="card-body">
+        <p class="card-text">{{symbol}}</p>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
   name: 'Card',
   props: {
     src: String,
-    text: String
+    symbol: String
   }
 }
 </script>
@@ -22,5 +24,15 @@ export default {
   .card {
     margin-left: 1%;
     margin-top: 2%;
+  }
+
+  a {
+    color: black;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  a:hover {
+    color: black;
   }
 </style>
