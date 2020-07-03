@@ -1,6 +1,6 @@
 <template>
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="" alt="Card image cap">
+    <img class="card-img-top" src="">
     <div class="card-body">
       <p class="card-text">{{text}}</p>
     </div>
@@ -17,3 +17,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .card {
+    margin-left: 1%;
+    margin-top: 2%;
+  }
+</style>

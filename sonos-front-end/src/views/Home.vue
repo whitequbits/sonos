@@ -1,11 +1,14 @@
 <template>
   <div class="home">
-    <Card v-for="(stock, index) in stockData" :key="index" v-bind:text="stock.title"/>
+    <div class="container mx-auto d-flex justify-content-around flex-wrap">
+      <Card v-for="(stock, index) in data" :key="index" v-bind:text="stock.symbol"/>
+    </div>
   </div>
 </template>
 
 <script>
 import Card from '@/components/Card'
+import { stockData } from '@/stockData'
 
 export default {
   name: 'Home',
@@ -14,21 +17,12 @@ export default {
   },
   data() {
     return {
-      stockData: [],
+      data: [],
       errors: []
     }
   },
-  mounted: function () {
-    this.getStockData()
-  },
-  methods: {
-    async getStockData () {
-      this.$axios
-        .get('https://my-json-server.typicode.com/typicode/demo/posts')
-        .then( response => {
-          this.stockData = response.data
-        })
-    }
+  mounted() {
+    this.data = stockData
   }
 }
 </script>
