@@ -1,12 +1,24 @@
 export const stockData = [
          {
-           symbol: "BBRI"
-         },
-         {
            symbol: "ADRO"
          },
          {
-           symbol: "JPFA"
+           symbol: "ASII"
+         },
+         {
+           symbol: "BBRI"
+         },
+         {
+           symbol: "BBCA"
+         },
+         {
+           symbol: "BMRI"
+         },
+         {
+           symbol: "CPIN"
+         },
+         {
+           symbol: "INTP"
          },
          {
            symbol: "ICBP"
@@ -15,22 +27,21 @@ export const stockData = [
            symbol: "INDF"
          },
          {
-           symbol: "BMRI"
+           symbol: "JPFA"
+         },
+         {
+           symbol: "SMGR"
+         },
+         {
+           symbol: "TLKM"
+         },
+         {
+           symbol: "TPIA"
+         },
+         {
+           symbol: "UNVR"
+         },
+         {
+           symbol: "UNTR"
          }
        ];
-
-export const item = {
-  name: null,
-  status: null,
-  color: null,
-  size: null
-};
-
-export function createItem() {
-  return {
-    name: null,
-    status: null,
-    color: null,
-    size: null
-  };
-}

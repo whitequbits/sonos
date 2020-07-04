@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="dark" variant="danger">
       <b-navbar-brand href="/">Sonos</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -36,5 +36,9 @@ export default {
 
   a:hover {
     color: white;
+  }
+
+  b-navbar {
+    background-color: white;
   }
 </style>

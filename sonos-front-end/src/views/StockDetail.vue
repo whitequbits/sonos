@@ -1,21 +1,21 @@
 <template>
   <div class="stock-detail">
     <div class="container">
-      <StockCard class="mx-auto" :symbol="$route.params.symbol"/>
-      <Table class="mx-auto"/>
+      <CompanyCard class="mx-auto" :symbol="$route.params.symbol"/>
+      <FundamentalTable class="mx-auto" :symbol="$route.params.symbol"/>
     </div>
   </div>
 </template>
 
 <script>
-import Table from '@/components/Table'
-import StockCard from '@/components/StockCard'
+import FundamentalTable from '@/components/FundamentalTable'
+import CompanyCard from '@/components/CompanyCard'
 
 export default {
   name: 'StockDetail',
   components: { 
-    Table,
-    StockCard
+    FundamentalTable,
+    CompanyCard
   },
   props: {
     symbol: String

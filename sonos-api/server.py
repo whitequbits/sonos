@@ -1,14 +1,28 @@
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from stock import Stock
 from company import Company
 from stock_lstm_predictor import StockLSTMPredictor
+
+origins = [
+  "http://localhost",
+  "http://localhost:8080"
+]
 
 
 HEADERS = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
 def fastapi_app():
     app = FastAPI()
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
     @app.get('/')
     def server_is_up():
