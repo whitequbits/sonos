@@ -29,7 +29,16 @@ export default {
   },
   methods: {
     search_text() {
-      console.log(this.search.text);
+      var inside = this;
+      this.$store.state.filteredStockSymbol = this.$store.state.stockSymbol.filter(function(stockSymbol) {
+        if (
+          stockSymbol.symbol
+            .toLowerCase()
+            .indexOf(inside.search.text.toLowerCase()) != "-1"
+        ) {
+          return stockSymbol;
+        }
+      });
     }
   }
 }
