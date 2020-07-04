@@ -2,6 +2,7 @@ import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from stock import Stock
+from stock_symbol import StockSymbol
 from company import Company
 from stock_lstm_predictor import StockLSTMPredictor
 
@@ -27,6 +28,11 @@ def fastapi_app():
     @app.get('/')
     def server_is_up():
         return 'server is up'
+
+    @app.get('/stock_symbol')
+    def get_stock_symbol():
+      stock_symbol_data = StockSymbol().get_data()
+      return stock_symbol_data
 
     @app.get('/company_data')
     def get_company_data(symbol):
