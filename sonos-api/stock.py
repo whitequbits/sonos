@@ -11,3 +11,9 @@ class Stock:
 
     return response.json()
 
+  def get_daily_data(self):
+    response = requests.get(
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={self.symbol}.JK&apikey=MWS5CUQWP4SDJK9L&outputsize=compact&datatype=json")
+
+    return response.json()
+

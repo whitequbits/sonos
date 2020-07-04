@@ -55,7 +55,6 @@ export default {
       .get(`http://localhost:8081/stock_data?symbol=${this.symbol}`)
       .then(response => {
         this.stockData = response.data['metric'];
-        console.log(this.stockData)
       });
     }
   }

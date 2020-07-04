@@ -10,7 +10,7 @@ class StockLSTMPredictor:
   def __init__(self, symbol, future_day=5):
     self.symbol = symbol
     self.future_day = future_day
-    self.stock_dataset = Stock(self.symbol).get_data()
+    self.stock_dataset = Stock(self.symbol).get_daily_data()
 
   def predict(self):
     # Preprocessing
