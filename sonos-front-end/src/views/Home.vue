@@ -28,6 +28,7 @@ export default {
       .get("http://localhost:8081/stock_symbol")
       .then(response => {
         this.$store.state.stockSymbol = response.data;
+        this.$store.state.filteredStockSymbol = response.data;
       });
     }
   }

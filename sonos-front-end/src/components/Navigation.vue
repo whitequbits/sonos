@@ -10,8 +10,11 @@
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto mr-5">
-          <b-nav-form>
+          <b-nav-form v-if="this.$route.path == '/'">
             <b-form-input @input="search_text()" size="sm" class="mr-sm-2" placeholder="Search" v-model="search.text"></b-form-input>
+          </b-nav-form>
+          <b-nav-form v-else="">
+            <router-link to="/">Back</router-link>
           </b-nav-form>
         </b-navbar-nav>
       </b-collapse>
