@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from stock import Stock
+from company import Company
 from stock_lstm_predictor import StockLSTMPredictor
 
 
@@ -12,6 +13,11 @@ def fastapi_app():
     @app.get('/')
     def server_is_up():
         return 'server is up'
+
+    @app.get('/company_data')
+    def get_company_data(symbol):
+      company_data = Company(symbol).get_data()
+      return company_data
 
     @app.get('/stock_data')
     def get_stock_data(symbol):
