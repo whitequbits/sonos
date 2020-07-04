@@ -9,10 +9,9 @@
           <router-link to="/about">About</router-link>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
+        <b-navbar-nav class="ml-auto mr-5">
           <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+            <b-form-input @input="search_text()" size="sm" class="mr-sm-2" placeholder="Search" v-model="search.text"></b-form-input>
           </b-nav-form>
         </b-navbar-nav>
       </b-collapse>
@@ -23,6 +22,16 @@
 <script>
 export default {
   name: 'Navigation',
+  data() {
+    return {
+      search: { text: "" },
+    }
+  },
+  methods: {
+    search_text() {
+      console.log(this.search.text);
+    }
+  }
 }
 </script>
 

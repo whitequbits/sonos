@@ -1,28 +1,36 @@
 <template>
   <div class="home">
     <div class="container mx-auto d-flex justify-content-around flex-wrap">
-      <Card v-for="(stock, index) in data" :key="index" v-bind:symbol="stock.symbol"/>
+      <Card v-for="(stock, index) in stockSymbol" :key="index" v-bind:symbol="stock.symbol.slice(0, 4)" v-bind:name="stock.description"/>
     </div>
   </div>
 </template>
 
 <script>
 import Card from '@/components/Card'
-import { stockData } from '@/stockData'
 
 export default {
   name: 'Home',
   components: {
     Card
   },
-  data() {
+    data() {
     return {
-      data: [],
+      stockSymbol: [],
       errors: []
     }
   },
   mounted() {
-    this.data = stockData
+    this.getStockSymbolData()
+  },
+  methods: {
+    getStockSymbolData: function() {
+      this.$axios
+      .get("http://localhost:8081/stock_symbol")
+      .then(response => {
+        this.stockSymbol = response.data;
+      });
+    }
   }
 }
 </script>
