@@ -5,7 +5,7 @@
       <h5 class="card-title">{{symbol}}</h5>
       <p class="card-text">{{desc}}</p>
       <router-link :to="{name: 'StockDetail', params: { symbol: symbol }}">
-        <button class="btn btn-primary">Learn More</button>
+        <button class="btn btn-primary">Detail</button>
       </router-link>
     </div>
   </div>
