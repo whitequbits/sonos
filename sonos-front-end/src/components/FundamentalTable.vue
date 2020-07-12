@@ -52,7 +52,7 @@ export default {
   methods: {
     getStockData: function() {
       this.$axios
-      .get(`${process.env.SONOS_API_ENDPOINT}/stock_data?symbol=${this.symbol}`)
+      .get(`${process.env.VUE_APP_ENDPOINT}/stock_data?symbol=${this.symbol}`)
       .then(response => {
         this.stockData = response.data['metric'];
       });

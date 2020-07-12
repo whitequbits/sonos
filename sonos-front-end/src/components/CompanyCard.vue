@@ -28,7 +28,7 @@ export default {
   methods: {
     getCompanyData: function() {
       this.$axios
-      .get(`${process.env.SONOS_API_ENDPOINT}/company_data?symbol=${this.symbol}`)
+      .get(`${process.env.VUE_APP_ENDPOINT}/company_data?symbol=${this.symbol}`)
       .then(response => {
         this.companyData = response.data;
       });
