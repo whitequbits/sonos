@@ -25,7 +25,7 @@ export default {
   methods: {
     getStockSymbolData: function() {
       this.$axios
-      .get("http://localhost:8081/stock_symbol")
+      .get(`${process.env.SONOS_API_ENDPOINT}/stock_symbol`)
       .then(response => {
         this.$store.state.stockSymbol = response.data;
         this.$store.state.filteredStockSymbol = response.data;

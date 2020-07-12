@@ -36,7 +36,7 @@ export default {
     try {
       let inside = this
       await this.$axios
-        .get(`http://localhost:8081/predict?symbol=${this.symbol}&future_day=5`)
+        .get(`${process.env.SONOS_API_ENDPOINT}/predict?symbol=${this.symbol}&future_day=5`)
         .then(response => {
           inside.chartdata.datasets[0].data = Object.values(response.data['5-day result'])
           inside.chartdata.labels = Object.keys(response.data['5-day result'])
