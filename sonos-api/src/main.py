@@ -9,12 +9,13 @@ from .stock_lstm_predictor import StockLSTMPredictor
 app = FastAPI()
 
 origins = [
-  "http://localhost",
-  "http://localhost:8080"
+    "http://localhost",
+    "http://localhost:8080"
 ]
 
 
 HEADERS = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+
 
 def fastapi_app():
     app.add_middleware(
@@ -48,6 +49,11 @@ def fastapi_app():
     def predict(symbol, future_day):
       future_day = int(future_day)
       stock_data = StockLSTMPredictor(symbol, future_day).predict()
+      return stock_data
+
+    @app.get('/stock_daily_data')
+    def get_stock_daily_data(symbol):
+      stock_data = Stock(symbol).get_daily_data()
       return stock_data
 
     return app
