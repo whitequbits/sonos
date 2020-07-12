@@ -1,6 +1,6 @@
-from preprocessor import df_from_response, split_dataset, reshape_data
-from stock import Stock
-from stock_lstm_model import StockLstmModel
+from .preprocessor import df_from_response, split_dataset, reshape_data
+from .stock import Stock
+from .stock_lstm_model import StockLstmModel
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import pandas as pd

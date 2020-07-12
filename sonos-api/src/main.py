@@ -1,10 +1,12 @@
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
-from stock import Stock
-from stock_symbol import StockSymbol
-from company import Company
-from stock_lstm_predictor import StockLSTMPredictor
+from .stock import Stock
+from .stock_symbol import StockSymbol
+from .company import Company
+from .stock_lstm_predictor import StockLSTMPredictor
+
+app = FastAPI()
 
 origins = [
   "http://localhost",
@@ -15,8 +17,6 @@ origins = [
 HEADERS = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
 def fastapi_app():
-    app = FastAPI()
-
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -52,6 +52,8 @@ def fastapi_app():
 
     return app
 
+
+app = fastapi_app()
+
 if __name__ == '__main__':
-    app = fastapi_app()
     uvicorn.run(app, host="127.0.0.1", port=8081)
