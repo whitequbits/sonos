@@ -6,4 +6,4 @@ services:
     volumes : 
      - ../scripts:/scripts
     ports:
-     - 8080:5000
+     - 8000:5000
