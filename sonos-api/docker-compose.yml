@@ -1,9 +1,22 @@
-version: "3.7"
+version: '3.6'
 
 services:
+
+  # Backend API
   sonos-api:
-    build : .
-    volumes : 
-     - ../scripts:/scripts
+    container_name: sonos-api-backend
+    env_file:
+      - ./.env
+    build: ./
+    working_dir: /usr/src/sonos-api
+    command: npm start
     ports:
-     - 8000:5000
+      - "8000:5000"
+    volumes:
+      - ./:/usr/src/sonos-api
+    networks:
+      - sonos-net
+
+networks:
+  sonos-net:
+    name: backend_network
