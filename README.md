@@ -25,7 +25,7 @@ What things you need to use it
 
 Already Deploy to [this link](https://sonos-app.netlify.app)
 
-## Howt to Run it in Local
+## How to Run it in Local
 
 ```bash
 uvicorn src.main:app --host=0.0.0.0
@@ -36,6 +36,14 @@ or
 
 ```bash
 docker-compose up -d
+```
+
+## How to use slim API
+
+Go to here
+
+```bash
+http://0.0.0.0:8000/docs
 ```
 
 ## Contributing

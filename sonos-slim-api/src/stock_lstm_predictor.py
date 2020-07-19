@@ -7,7 +7,7 @@ import pandas as pd
 import json
 
 class StockLSTMPredictor:
-  def __init__(self, symbol, future_day=5, ):
+  def __init__(self, symbol, future_day=5):
     self.symbol = symbol
     self.future_day = future_day
     self.stock_dataset = Stock(self.symbol).get_daily_data()
@@ -26,7 +26,7 @@ class StockLSTMPredictor:
 
     # Model Building
     model = StockLstmModel().build_model()
-    model.fit(trainX, trainY, epochs=50, batch_size=1, verbose=0)
+    model.fit(trainX, trainY, epochs=100, batch_size=32, verbose=0)
     scale = MinMaxScaler()
     scale.min_, scale.scale_ = scaler.min_[3], scaler.scale_[3]
 
@@ -36,7 +36,7 @@ class StockLSTMPredictor:
     current_prediction_datasetX, current_prediction_datasetY = reshape_data(current_prediction_dataset)
     current_prediction_datasetX = np.reshape(current_prediction_datasetX, (current_prediction_datasetX.shape[0], 1, current_prediction_datasetX.shape[1]))
     result = model.predict(current_prediction_datasetX)
-    result = scale.inverse_transform(result)
+    # result = scale.inverse_transform(result)
     result = pd.DataFrame(data=result[~self.future_day:], columns=[f"{self.future_day}-day result"])
 
     return result.to_dict()
