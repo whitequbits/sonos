@@ -1,9 +1,0 @@
-pandas
-numpy
-uvicorn
-fastapi
-scikit-learn
-keras
-tensorflow-cpu
-requests
-python-dotenv

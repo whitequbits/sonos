@@ -1,4 +1,4 @@
-# Sonos Project
+# Sonos
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ This is my full stack machine learning project
 
 What things you need to use it
 
-```
+```bash
 1. NVM
 2. Node 13.5
 3. VueJS 2
