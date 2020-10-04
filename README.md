@@ -4,8 +4,6 @@
 
 This is my full stack machine learning project
 
-[Zero To Mastery](https://zerotomastery.io)
-
 ### Prerequisites
 
 What things you need to use it
@@ -48,13 +46,13 @@ http://0.0.0.0:8000/docs
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/rainoverme002/sonos-project) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/whitequbits/sonos-project) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-[rainoverme002](https://github.com/rainoverme002)
+[whitequbits](https://github.com/whitequbits)
 
-See also the list of [contributors](https://github.com/rainoverme002/sonos-project) who participated in this project.
+See also the list of [contributors](https://github.com/whitequbits/sonos-project) who participated in this project.
 
 ## License
 
