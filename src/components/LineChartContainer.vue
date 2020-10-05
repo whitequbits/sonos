@@ -28,7 +28,14 @@ export default {
     },
     chartoptions: {
       responsive: true,
-      maintainAspectRatio: false
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+            ticks: {
+                display: false
+            }
+        }]
+      }
     }
   }),
   async mounted () {
@@ -36,7 +43,7 @@ export default {
     try {
       let inside = this
       await this.$axios
-        .get(`${process.env.VUE_APP_ENDPOINT}/predict?symbol=${this.symbol}&future_day=5`)
+        .get(`${process.env.VUE_APP_BACKEND_API}/predict?symbol=${this.symbol}&future_day=5`)
         .then(response => {
           inside.chartdata.datasets[0].data = Object.values(response.data['5-day result'])
           inside.chartdata.labels = Object.keys(response.data['5-day result'])

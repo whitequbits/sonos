@@ -28,7 +28,7 @@ export default {
   methods: {
     getCompanyData: function() {
       this.$axios
-      .get(`${process.env.VUE_APP_ENDPOINT}/company_data?symbol=${this.symbol}`)
+      .get(`${process.env.VUE_APP_BACKEND_API}/company_data?symbol=${this.symbol}`)
       .then(response => {
         this.companyData = response.data;
       });
@@ -48,7 +48,7 @@ export default {
     float: left;
     width:  100px;
     height: 100px;
-    object-fit: cover;
+    object-fit: scale-down;
     margin-left: 8px;
     margin-right: 8px;
     margin-top: 8px;

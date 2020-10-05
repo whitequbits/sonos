@@ -10,12 +10,12 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./.env
-    command: npm start
+    command: npm run serve
     volumes:
       - '.:/app'
       - '/app/node_modules'
     ports:
-      - 3001:3000
+      - 8080:8080
     environment:
       - CHOKIDAR_USEPOLLING=true
     networks:

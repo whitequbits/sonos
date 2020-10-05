@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:13.5
+FROM node:13.5-slim
 
 # set working directory
 WORKDIR /app
@@ -16,4 +16,4 @@ RUN npm install --silent
 COPY . ./
 
 # start app
-CMD ["npm", "start"]
+CMD ["npm", "run", "serve"]

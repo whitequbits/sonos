@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th scope="col">Indicator</th>
-          <th scope="col">Value (Ratio/Rp)</th>
+          <th scope="col">Value</th>
         </tr>
       </thead>
       <tbody>
@@ -52,7 +52,7 @@ export default {
   methods: {
     getStockData: function() {
       this.$axios
-      .get(`${process.env.VUE_APP_ENDPOINT}/stock_data?symbol=${this.symbol}`)
+      .get(`${process.env.VUE_APP_BACKEND_API}/stock_data?symbol=${this.symbol}`)
       .then(response => {
         this.stockData = response.data['metric'];
       });

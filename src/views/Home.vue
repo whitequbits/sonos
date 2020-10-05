@@ -14,9 +14,9 @@
       <h2 class="my-4">Sonos: Predict your Favorite Stock</h2>
       <h4 class="my-c-25">Our Current Top Pick</h4>
       <div class="d-flex justify-content-around flex-wrap">
-        <HomeCard symbol="INDF" src="https://akcdn.detik.net.id/visual/2015/01/04/a2c5f53f-bf4b-4eff-9e4f-773e879068d8_169.jpg?w=650"/>
-        <HomeCard symbol="TLKM" src="https://1.bp.blogspot.com/-Gn82eHdGkg8/XVyoNbAlrgI/AAAAAAAANuQ/PyNo1t2DpiwYFxzIDEk9H8oCe_NNTs9PQCLcBGAs/s1600/logo%2Btelkom.png"/>
-        <HomeCard symbol="BBRI" src= "https://mmc.tirto.id/image/otf/700x0/2016/05/11/LogoBRI_050_ratio-16x9.JPG"/>
+        <HomeCard symbol="GOOGL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"/>
+        <HomeCard symbol="AAPL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/80px-Apple_logo_black.svg.png"/>
+        <HomeCard symbol="AMZN" src= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/175px-Amazon_logo.svg.png"/>
       </div>
    </section>
 

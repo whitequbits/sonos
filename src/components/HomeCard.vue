@@ -25,9 +25,9 @@ export default {
 
 <style scoped>
   img {
-    float: left;
+    float: center;
     width:  100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: scale-down;
   }
 </style>
