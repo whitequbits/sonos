@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container mx-auto d-flex justify-content-around flex-wrap">
-      <Card v-for="(stock, index) in this.$store.state.filteredStockSymbol" :key="index" v-bind:symbol="stock.symbol.slice(0, 4)" v-bind:name="stock.description"/>
+      <Card v-for="(stock, index) in this.$store.state.filteredStockSymbol" :key="index" v-bind:symbol="stock['Symbol'].slice(0, 4)" v-bind:name="stock['Company Name']"/>
     </div>
   </div>
 </template>
@@ -27,6 +27,7 @@ export default {
       this.$axios
       .get(`${process.env.VUE_APP_BACKEND_API}/stock_symbol`)
       .then(response => {
+        console.log(response.data[0]["Company Name"]);
         this.$store.state.stockSymbol = response.data;
         this.$store.state.filteredStockSymbol = response.data;
       });

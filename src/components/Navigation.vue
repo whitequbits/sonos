@@ -36,7 +36,7 @@ export default {
       var inside = this;
       this.$store.state.filteredStockSymbol = this.$store.state.stockSymbol.filter(function(stockSymbol) {
         if (
-          stockSymbol.symbol
+          stockSymbol.Symbol
             .toLowerCase()
             .indexOf(inside.search.text.toLowerCase()) != "-1"
         ) {
