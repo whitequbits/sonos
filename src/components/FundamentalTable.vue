@@ -1,6 +1,6 @@
 <template>
-  <div class="card">
-    <table class="table">
+  <div class="card" >
+    <table class="table" v-if="loaded">
       <thead>
         <tr>
           <th scope="col">Indicator</th>
@@ -30,6 +30,11 @@
         </tr>
       </tbody>
     </table>
+    <div class="loading-card text-center" v-else>
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -42,12 +47,18 @@ export default {
   },
   data() {
     return {
+      loaded: false,
       stockData: [],
       errors: []
     }
   },
-  mounted() {
-    this.getStockData()
+  async mounted() {
+    this.loaded = false;
+    try {
+      this.getStockData();
+    } catch (err) {
+      this.errors << err
+    }
   },
   methods: {
     getStockData: function() {
@@ -55,6 +66,9 @@ export default {
       .get(`${process.env.VUE_APP_BACKEND_API}/stock_data?symbol=${this.symbol}`)
       .then(response => {
         this.stockData = response.data['metric'];
+        this.loaded = true;
+      }).catch( err => {
+        this.errors << err
       });
     }
   }
@@ -66,5 +80,10 @@ export default {
     margin-top: 2%;
     margin-bottom: 2%;
     width: 75%;
+  }
+
+  .loading-card {
+    margin-top: 15%;
+    margin-bottom: 15%;
   }
 </style>

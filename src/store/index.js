@@ -8,6 +8,7 @@ export default new Vuex.Store({
     searchText: "",
     stockSymbol: [],
     filteredStockSymbol: [],
+    loading: true,
   },
   mutations: {},
   actions: {},
